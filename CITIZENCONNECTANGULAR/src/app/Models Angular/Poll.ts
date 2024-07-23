@@ -1,8 +1,7 @@
 import {Request } from 'express'
 import { addChoice, ChoiceRequest, IChoice } from './Choices';
 import { number } from 'joi';
-import { ExtendedRequest } from '../Middlewares/verifyTokens';
- 
+
 
  export interface IPoll{
     id: string;
@@ -14,7 +13,7 @@ import { ExtendedRequest } from '../Middlewares/verifyTokens';
     isDeleted: boolean;
  }
 
- interface addPoll{
+ export interface addPoll{
     question: string;
     startdate: string;
     enddate: string;
@@ -22,11 +21,15 @@ import { ExtendedRequest } from '../Middlewares/verifyTokens';
     choices: string [];
 }
 
-export interface PollRequest extends ExtendedRequest {
-    body:addPoll;
-}
+
 
 export interface Poll {
     poll: IPoll,
     choicesArray: IChoice[]
 }
+
+
+export interface AddPollResponse{
+    message: string
+}
+

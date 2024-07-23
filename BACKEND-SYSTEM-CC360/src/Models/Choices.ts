@@ -1,5 +1,6 @@
 import exp from 'constants';
 import {Request } from 'express'
+import { ExtendedRequest } from '../Middlewares/verifyTokens';
  
 
  export interface IChoice{
@@ -14,6 +15,6 @@ export interface addChoice{
     choicetext: string;
 }
 
-export interface ChoiceRequest extends Request {
+export interface ChoiceRequest extends ExtendedRequest {
     body:addChoice;
 }

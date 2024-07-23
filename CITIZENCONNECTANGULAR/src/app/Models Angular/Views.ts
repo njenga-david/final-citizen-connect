@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { ExtendedRequest } from "../Middlewares/verifyTokens";
+
 import { IComments } from "./Comment";
 
 export interface IView {
@@ -9,24 +9,29 @@ export interface IView {
     viewsummary: string,
     createdby: string,
     createdat: string,
-    isDelted: number
+    isDeleted: number
 
 }
 
-interface addViews {
+export interface addView {
     title: string,
     description: string,
     viewsummary: string,
     createdby: string,
     createdat: string,
-    isDelted: number
+    isDeleted: number
 }
 
-export interface ViewRequest extends ExtendedRequest {
-    body: addViews;
-}
 
 export interface View {
     view: IView,
     commentsArray: IComments[]
 }
+
+
+export interface AddViewResponse{
+    message: string
+}
+
+
+

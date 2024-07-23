@@ -1,7 +1,6 @@
 import { Request } from "express"
-import { ExtendedRequest } from "../Middlewares/verifyTokens"
 
-export interface IIncidents {
+export interface IIncident {
     id: string,
     title: string,
     description: string,
@@ -14,7 +13,7 @@ export interface IIncidents {
 
 }
 
-interface addIncident {
+export interface addIncident {
     title: string,
     description: string,
     location: string,
@@ -26,6 +25,8 @@ interface addIncident {
 
 }
 
-export interface IncidentRequest extends ExtendedRequest {
-    body: addIncident
+export interface AddIncidentResponse{
+    message: string
 }
+
+

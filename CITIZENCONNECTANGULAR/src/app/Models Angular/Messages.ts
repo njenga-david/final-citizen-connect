@@ -1,5 +1,4 @@
 import { Request } from "express"
-import { ExtendedRequest } from "../Middlewares/verifyTokens"
 
 export interface IMessage{
     id: string,
@@ -12,7 +11,7 @@ export interface IMessage{
 
 }
 
-interface addMessage{
+export  interface addMessage{
     chatid: string,
     userid:string,
     sender: string,
@@ -21,6 +20,7 @@ interface addMessage{
     isDeleted: number
 }
 
-export interface MessageRequest extends ExtendedRequest {
-    body: addMessage
+export interface AddMessageResponse{
+    message: string
 }
+

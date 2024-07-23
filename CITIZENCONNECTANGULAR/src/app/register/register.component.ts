@@ -34,6 +34,10 @@ export class RegisterComponent implements OnInit {
     console.log("Register Form Submitted")
     console.log(this.registerForm);
     // send form data to server for authentication
+
+    
+
+
   }
 
 }

@@ -1,5 +1,4 @@
 import { Request } from "express"
-import { ExtendedRequest } from "../Middlewares/verifyTokens"
 
 export interface IComments{
     id: string,
@@ -10,7 +9,7 @@ export interface IComments{
     isDeleted: number
 }
 
-interface addComment{
+export interface addComment{
     comment: string,
     createdby: string,
     viewid:string
@@ -18,6 +17,7 @@ interface addComment{
     isDelted: number
 }
 
-export interface CommentRequest extends ExtendedRequest{
-    body: addComment
+export interface AddCommentResponse{
+    message: string
 }
+

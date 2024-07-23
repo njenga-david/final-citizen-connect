@@ -8,7 +8,7 @@ import { DBHelper } from "../Database Helpers";
 import { IChoice } from "../Models/Choices";
 
 import { ExtendedRequest } from "../Middlewares/verifyTokens";
-import { IVote } from "../Models/Votes";
+import { IVote, VoteRequest } from "../Models/Votes";
 import { any } from "joi";
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env") })
@@ -79,7 +79,7 @@ export const getAllPolls: RequestHandler = async (req, res) => {
   }
 }
 
-export const addVote = async (req: ExtendedRequest, res: Response) => {
+export const addVote = async (req: VoteRequest, res: Response) => {
   try {
     const id = uid();
     const voterid = req.info?.sub;

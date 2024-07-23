@@ -9,7 +9,7 @@ export interface IView {
     viewsummary: string,
     createdby: string,
     createdat: string,
-    isDelted: number
+    isDeleted: number
 
 }
 
@@ -19,7 +19,7 @@ interface addViews {
     viewsummary: string,
     createdby: string,
     createdat: string,
-    isDelted: number
+    isDeleted: number
 }
 
 export interface ViewRequest extends ExtendedRequest {

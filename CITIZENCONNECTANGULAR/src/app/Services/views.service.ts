@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IView } from '../Models Angular/Views';
+import { addView, AddViewResponse, IView, View } from '../Models Angular/Views';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -8,12 +8,40 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ViewsService {
 
-    private readonly Base_URL = "http://localhost:1000/views/"
+    private readonly BaseURL = "http://localhost:1000/views/"
+    retrievedToken = localStorage.getItem('token') as string;
 
   constructor(private http:HttpClient) { }
 
 
-  addView(newView:IView):Observable<IView>{
-    return this.http.post<IView>(this.Base_URL + "add", newView)
+
+  addView(newView: addView): Observable<AddViewResponse> {
+
+    return this.http.post<AddViewResponse>(this.BaseURL, newView, {
+      headers: new HttpHeaders({
+        token: this.retrievedToken
+      })
+    });
   }
+
+  getAllViews(): Observable<View[]> {
+    return this.http.get<View[]>(this.BaseURL, {
+      headers: new HttpHeaders({
+        token: this.retrievedToken
+      })
+    })
+  }
+
+  getSpecificViewById(id: string): Observable<View> {
+    return this.http.get<View>(this.BaseURL + id, {
+      headers: new HttpHeaders({
+        token: this.retrievedToken
+      })
+    })
+  }
+
+  
+
+
+
 }

@@ -13,3 +13,9 @@ export interface addVote {
     voterid: string,
     isDeleted: number
 }
+
+
+export interface AddVoteResponse{
+    message: string
+}
+
