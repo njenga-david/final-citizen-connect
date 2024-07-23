@@ -1,0 +1,72 @@
+<div class="wrapper">
+    <div class="contents">
+        <div class="container">
+            <div class="side-bar">
+                <div class="header">
+                    <h3>Citizen Connect 360</h3>
+                </div>
+
+                <div class="nav">
+                    <!-- <a [routerLink]="['']">Home</a> -->
+                    <a [routerLink]="['/users']">User Management</a>
+
+                </div>
+
+            </div>
+            <div class="display-port">
+                <div class="view-header">
+                    <h3>User Management</h3>
+                    <!-- <a [routerLink]="['']">Home</a> -->
+                    <a [routerLink]="['']">User Management</a>
+                </div>
+
+                <div class="view">
+                  
+                    <table class="styled-table responsive-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Jane Doe</td>
+                                <td>jane&#64;gmail.com</td>
+                                <td>Citizen</td>
+                                <td>Active</td>
+                                <td class="actions">
+                                    <input type="button" value="Edit" id="edit-btn" [routerLink]="['/user/1']">
+                                    <input type="button" value="Delete" id="delete-btn">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Michael Doe</td>
+                                <td>jane&#64;gmail.com</td>
+                                <td>Govt Official</td>
+                                <td>Active</td>
+                                <td class="actions">
+                                    <input type="button" value="Edit" id="edit-btn" [routerLink]="['/user/2']">
+                                    <input type="button" value="Delete" id="delete-btn">
+                                </td>
+                            </tr>
+
+                        
+                         
+                           
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

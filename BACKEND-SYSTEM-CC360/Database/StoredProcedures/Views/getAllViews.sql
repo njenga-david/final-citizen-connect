@@ -1,0 +1,9 @@
+USE CITIZENCONNECT360;
+GO
+CREATE OR ALTER PROCEDURE getAllViews
+AS
+BEGIN
+    SELECT *
+    FROM views
+    WHERE isDeleted !=1
+END

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+:root {
+    --blue-color: #007BFF;
+    --off-white: #F5F5F5;
+    --egg-shell: #EBEBEB;
+    --ivory-color: #FFFFF0;
+    --dark-gray: #333333;
+    --charcoal-color: #424242;
+    --very-darkgray: #212121;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #424242;
+   
+}
+main{
+    background-color: #FFFFF0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 1rem 0;
+}
+
+p,
+ul {
+    margin: 0.5rem 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+/* Main Content Styles */
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+section a {
+    color: #007BFF;
+}
+ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    font-size: 0.8rem;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    section {
+        margin-bottom: 1rem;
+    }
+}

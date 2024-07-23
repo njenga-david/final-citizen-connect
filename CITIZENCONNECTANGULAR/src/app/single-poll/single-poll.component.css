@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+:root {
+    --blue-color: #007BFF;
+    --off-white: #F5F5F5;
+    --egg-shell: #EBEBEB;
+    --ivory-color: #FFFFF0;
+    --dark-gray: #333333;
+    --charcoal-color: #424242;
+    --very-darkgray: #212121;
+}
+
+
+.wrapper {
+    width: 100vw;
+    min-height: 90vh;
+    background-color: #FFFFF0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents {
+    width: 80vw;
+    min-height: 90vh;
+    background-color: transparent;
+    color: #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.vote-card,
+.result-card {
+    width: 80%;
+    background-color: #F5F5F5;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 10px 20px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.vote-card input[type="button"],
+.vote-card p,
+.vote-card label,
+.result-record label {
+    font-family: 'Lato';
+}
+
+.vote-card input[type="button"],
+.container [type="submit"] {
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #EBEBEB;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #007BFF;
+    border: none;
+}
+
+.vote-card p,
+.vote-card label,
+.result-record label {
+    font-weight: 500;
+}
+
+.vote-card p,
+.result-record label {
+    font-size: 20px;
+    width: 80%;
+}
+
+.vote-card label,
+.result-record label {
+    font-size: 15px;
+}
+
+.vote-action,
+.result-record {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.vote-action {
+    justify-content: end;
+    flex-direction: row;
+}
+
+.progress-container {
+    width: 80%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #007BFF;
+    text-align: center;
+    color: white;
+    border-radius: 25px 0 0 25px;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        min-height: 70vh;
+    }
+
+    .contents {
+        width: 100vw;
+        min-height: 70vh;
+    }
+
+    .vote-card p,
+    .vote-card label,
+    .result-record label {
+        font-size: 15px;
+    }
+
+    .result-record {
+        gap: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .wrapper {
+        min-height: 70vh;
+    }
+
+    .contents {
+        width: 100vw;
+        min-height: 70vh;
+    }
+
+    .vote-card p {
+        font-size: 18px;
+    }
+
+    .result-record label {
+        font-size: 17px;
+    }
+}

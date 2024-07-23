@@ -1,0 +1,13 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE deleteChat(
+    @id VARCHAR(255)
+)
+AS
+BEGIN
+    UPDATE chats
+    SET isDeleted = 1
+    WHERE id = @id
+END

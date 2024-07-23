@@ -1,0 +1,9 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE getSpecificVoteCount(@id VARCHAR(255))
+AS
+BEGIN
+    SELECT votecount FROM choices WHERE id =@id
+END

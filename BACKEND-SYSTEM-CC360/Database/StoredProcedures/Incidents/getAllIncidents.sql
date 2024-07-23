@@ -1,0 +1,12 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE getAllIncidents
+AS
+BEGIN
+    SELECT *
+    FROM incidents
+    WHERE isDeleted !=1
+
+END

@@ -1,0 +1,11 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE getAllChats
+AS
+BEGIN
+    SELECT *
+    FROM chats
+    WHERE isDeleted !=1
+END

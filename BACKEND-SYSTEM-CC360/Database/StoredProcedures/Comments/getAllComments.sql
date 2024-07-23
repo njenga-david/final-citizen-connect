@@ -1,0 +1,11 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE getAllComments
+AS
+BEGIN
+    SELECT *
+    FROM comments
+    WHERE isDeleted !=1
+END

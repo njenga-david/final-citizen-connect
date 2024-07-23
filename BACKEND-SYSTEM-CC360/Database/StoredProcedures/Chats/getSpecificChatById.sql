@@ -1,0 +1,13 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE getSpecificChatById(
+    @id VARCHAR(255)
+)
+AS
+BEGIN
+    SELECT *
+    FROM chats
+    WHERE id = @id
+END

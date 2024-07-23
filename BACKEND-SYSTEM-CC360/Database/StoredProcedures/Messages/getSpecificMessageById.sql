@@ -1,0 +1,13 @@
+
+USE CITIZENCONNECT360;
+GO
+
+CREATE OR ALTER PROCEDURE getSpecificMessageById(
+    @id VARCHAR(255)
+)
+AS
+BEGIN
+    SELECT *
+    FROM messages
+    WHERE id = @id
+END

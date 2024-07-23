@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="contents">
+
+          <div class="container">
+            <form action="" [formGroup]="addViewForm" (ngSubmit)="onSubmit()">
+
+
+                <h2>Add View</h2>
+                <label for="search">View Title</label>
+                <input type="text" id="" name="" placeholder="Enter View Title" formControlName="title">
+                <div class="helper-text"
+                    *ngIf="addViewForm.get('title')?.touched && !addViewForm.get('title')?.valid">
+                    <p *ngIf="addViewForm.get('title')?.hasError('required')"><i>Title is required</i></p>
+                </div>
+
+                <label for="search">Description</label>
+                <input type="text" id="" name="" placeholder="Enter Views Description" formControlName="description">
+                <div class="helper-text"
+                    *ngIf="addViewForm.get('description')?.touched && !addViewForm.get('description')?.valid">
+                    <p *ngIf="addViewForm.get('description')?.hasError('required')"><i>Description is required</i></p>
+                </div>
+
+         
+
+
+                <input type="submit" value="Add View">
+
+
+            </form>
+
+        </div>
+
+
+    </div>
+</div>

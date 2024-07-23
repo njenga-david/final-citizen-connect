@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="contents">
+        <div class="container">
+ 
+            <form [formGroup]="userEditForm" (ngSubmit)="onSubmit()">
+                <h2>Update User Information</h2>
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter Username" id="username" name="username" required
+                    formControlName="username">
+                <div class="helper-text"
+                    *ngIf="userEditForm.get('username')?.touched && !userEditForm.get('username')?.valid">
+                    <p *ngIf="userEditForm.get('username')?.hasError('required')"><i>Username is required</i></p>
+                </div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter Email Address" id="email" name="email" required
+                    formControlName="email">
+                <div class="helper-text"
+                    *ngIf="userEditForm.get('email')?.touched && !userEditForm.get('email')?.valid">
+                    <p *ngIf="userEditForm.get('email')?.hasError('email')"><i>Email is invalid</i></p>
+                    <p *ngIf="userEditForm.get('email')?.hasError('required')"><i>Email is required</i></p>
+                </div>
+                
+                <label for="">Account Type</label>
+                <div class="account-types" *ngFor="let role of roles; let i = index">
+
+                    <label for="">
+                        <input type="radio" value="{{role}}" formControlName="role" >
+                         {{role}} 
+                    </label>
+    
+                </div>
+
+                <label for="">Govt Official Approval</label>
+                <div class="account-types" *ngFor="let action of actions; let i = index">
+                    <label for=""><input type="radio" value="{{action}}"   formControlName="action">  {{action}}</label>
+
+                </div>
+
+                <button type="submit" [disabled]="userEditForm.invalid" >Update User</button>
+               
+
+            </form>
+            
+        </div>
+    </div>
+</div>

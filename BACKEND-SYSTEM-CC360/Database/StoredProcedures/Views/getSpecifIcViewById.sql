@@ -1,0 +1,10 @@
+
+USE CITIZENCONNECT360;
+GO
+CREATE OR ALTER PROCEDURE getSpecifIcViewById(@id VARCHAR(255))
+AS
+BEGIN
+    SELECT *
+    FROM views
+    WHERE id = @id
+END

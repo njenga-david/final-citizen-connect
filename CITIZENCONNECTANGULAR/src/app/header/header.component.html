@@ -1,0 +1,36 @@
+<div class="wrapper">
+    <div class="navbar">
+        <div class="logo">
+            <h2>Citizen</h2>
+            <h2> Connect 360</h2>
+        </div>
+
+        <div class="nav-links">
+            <a [routerLink]="['']">Home</a>
+            <a [routerLink]="['views']">Views</a>
+            <a [routerLink]="['educate']">Educate</a>
+            <a [routerLink]="['incidents']">Incidents</a>
+            <a [routerLink]="['polls']">Polls</a>
+            <a [routerLink]="['profile']">Profile</a>
+            <!-- <a href="">Username</a> -->
+            <a [routerLink]="['login']">Login</a>
+
+            <!-- <a href="">Logout</a> -->
+        </div>
+        <i class='bx bx-x' (click)="toggle()" *ngIf="showNav"></i>
+        <i class='bx bx-menu' (click)="toggle()" *ngIf="!showNav"></i>
+    </div>
+
+    <div class="nav-links-responsive" *ngIf="showNav">
+        <!-- Move the anchor tags here from the nav-links div -->
+        <a [routerLink]="['']">Home</a>
+        <a [routerLink]="['views']">Views</a>
+        <a [routerLink]="['educate']">Educate</a>
+        <a [routerLink]="['incidents']">Incidents</a>
+        <a [routerLink]="['polls']">Polls</a>
+        <a [routerLink]="['profile']">Profile</a>
+        <!-- <a href="">Username</a> -->
+        <a [routerLink]="['/login']">Login</a>
+    </div>
+
+</div>
