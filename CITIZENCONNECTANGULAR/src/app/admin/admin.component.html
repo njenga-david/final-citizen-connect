@@ -21,8 +21,8 @@
                 </div>
 
                 <div class="view">
-                  
-                    <table class="styled-table responsive-table">
+
+                    <table class="styled-table responsive-table" *ngIf="allUsers$|async">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -34,33 +34,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Jane Doe</td>
-                                <td>jane&#64;gmail.com</td>
-                                <td>Citizen</td>
-                                <td>Active</td>
+
+                            <tr *ngFor="let user of allUsers$ | async; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{user.username}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.role}}</td>
+                                <td *ngIf="user.status === 1">Approved</td>
+                                <td *ngIf="user.status !== 1">Not Approved</td>
                                 <td class="actions">
-                                    <input type="button" value="Edit" id="edit-btn" [routerLink]="['/user/1']">
-                                    <input type="button" value="Delete" id="delete-btn">
+
+                                <input *ngIf="user.status === 1" type="button" id="edit-btn" value="Edit"  [routerLink]="['/user/'+user.id]">
+                                <input *ngIf="user.status !== 1" type="button" id="approve-btn" (click)="approveUser(user.id)" value="Approve" >
+                                <input type="button" value="Delete" id="delete-btn" (click)="deleteUser(user.id)">
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>2</td>
-                                <td>Michael Doe</td>
-                                <td>jane&#64;gmail.com</td>
-                                <td>Govt Official</td>
-                                <td>Active</td>
-                                <td class="actions">
-                                    <input type="button" value="Edit" id="edit-btn" [routerLink]="['/user/2']">
-                                    <input type="button" value="Delete" id="delete-btn">
-                                </td>
-                            </tr>
-
-                        
-                         
-                           
                         </tbody>
                     </table>
 

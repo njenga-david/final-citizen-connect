@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthenticationService } from '../Services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent  implements OnInit{
 
-  showNav = false;
+  constructor(public authService: AuthenticationService) { }
 
+  showNav = false;
 
   ngOnInit(): void {
 
@@ -20,6 +22,10 @@ export class HeaderComponent  implements OnInit{
 
   toggle() {
     this.showNav =!this.showNav;
+  }
+
+  logoutUser(){
+    this.authService.logOut()
   }
 
 

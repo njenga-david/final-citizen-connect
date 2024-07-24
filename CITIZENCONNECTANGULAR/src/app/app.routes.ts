@@ -18,6 +18,7 @@ import { EducateComponent } from './educate/educate.component';
 import { AdminComponent } from './admin/admin.component';
 import { SingleUserComponent } from './single-user/single-user.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { authGuard } from './Guards/auth.guard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -26,30 +27,29 @@ export const routes: Routes = [
     { path: 'terms', component: TermsComponent },
     { path: 'forgotpassword', component: ForgotComponent },
     { path: 'resetpassword', component: ResetComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'incidents', component: IncidentsComponent },
+    { path: 'profile',  canActivate: [authGuard], component: ProfileComponent },
+    { path: 'incidents', canActivate: [authGuard], component: IncidentsComponent },
     { path: 'addpoll', component: AddPollComponent },
     { path: 'addincident', component: AddIncidentComponent },
     { path: 'addview', component: AddViewComponent },
-    { path: 'educate', component: EducateComponent },
-   
-    { path: 'admin', component: AdminComponent },
+    { path: 'educate', canActivate: [authGuard], component: EducateComponent },
+
+    { path: 'admin',canActivate: [authGuard], component: AdminComponent },
     {
-        path: 'user',
-        children: [
+        path: 'user',children: [
             { path: ':id', component: SingleUserComponent }
 
         ]
     },
 
     {
-        path: 'views', children: [
+        path: 'views', canActivate: [authGuard], children: [
             { path: '', component: ViewsComponent },
             { path: ':id', component: SingleViewComponent },
         ]
     },
     {
-        path: 'polls', children: [
+        path: 'polls', canActivate: [authGuard], children: [
             { path: '', component: PollsComponent },
             { path: ':id', component: SinglePollComponent }
 

@@ -13,9 +13,9 @@
             <a [routerLink]="['polls']">Polls</a>
             <a [routerLink]="['profile']">Profile</a>
             <!-- <a href="">Username</a> -->
-            <a [routerLink]="['login']">Login</a>
-
-            <!-- <a href="">Logout</a> -->
+            <a [routerLink]="['admin']">Admin</a>
+            <a *ngIf="!authService.showStatus(); " [routerLink]="['login']">Login</a>
+            <a *ngIf="authService.showStatus(); " (click)="logoutUser()">Logout</a>
         </div>
         <i class='bx bx-x' (click)="toggle()" *ngIf="showNav"></i>
         <i class='bx bx-menu' (click)="toggle()" *ngIf="!showNav"></i>

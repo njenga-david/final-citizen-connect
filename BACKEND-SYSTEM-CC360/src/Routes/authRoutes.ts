@@ -13,6 +13,6 @@ authRouter.delete("/:id",verifyTokens,deleteUser)
 authRouter.post("/login",logInUser)
 authRouter.post("/forgotpassword",verifyTokens,forgotPassword)
 authRouter.patch("/updatepassword/:id",verifyTokens, updatePassword)
-authRouter.post("/approveofficial/:id",verifyTokens, approveOfficial)
+authRouter.patch("/approveofficial/:id", approveOfficial)
     
 export default authRouter

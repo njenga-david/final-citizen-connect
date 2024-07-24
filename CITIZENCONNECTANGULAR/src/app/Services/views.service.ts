@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { addView, AddViewResponse, IView, View } from '../Models Angular/Views';
+import { addView, AddViewResponse, IView, View } from '../Models-Angular/Views';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({

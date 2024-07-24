@@ -199,6 +199,16 @@ td #edit-btn {
     margin: 5px;
 }
 
+td #approve-btn {
+    padding: 5px 5px;
+    border: none;
+    background-color: #15ff00;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #EBEBEB;
+    margin: 5px;
+}
+
 td #delete-btn {
     padding: 5px 20px;
     border: none;

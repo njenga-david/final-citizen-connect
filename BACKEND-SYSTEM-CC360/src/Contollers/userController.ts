@@ -109,10 +109,10 @@ export const updateUser = async (req: Request<{ id: string }>, res: Response) =>
             //get data from the request
             const { username, email, password, role } = req.body;
 
-            const hashedPassword = await bcyrpt.hash(password, 10);
+            // const hashedPassword = await bcyrpt.hash(password, 10);
 
             //update the user
-            (await dbInstance.exec("updateUser", { id, username, email, password: hashedPassword, role ,status: user.status}))
+            (await dbInstance.exec("updateUser", { id, username, email, password, role ,status: user.status}))
             //success message
             return res.status(200).json({ message: "User updated successfully" })
 

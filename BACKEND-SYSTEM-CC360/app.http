@@ -29,13 +29,14 @@ GET  http://localhost:1000/auth/c7242e25-f4a3-419b-b52f-97935ca018dc
 #####
 #UPDATE USER
 
-PATCH   http://localhost:1000/auth/c7242e25-f4a3-419b-b52f-97935ca018dc
+PATCH   http://localhost:1000/auth/725cf6f0-e0c4-4502-9a19-1b8024be11f7
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2Y4MWE0OS1kOTJmLTQzNzEtYmVmMi01MzgxYzM1ZTUxNTAiLCJ1c2VybmFtZSI6IkppbW15Iiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE3ODc0NTQsImV4cCI6MTcyMjA0NjY1NH0.ABX3HkmHOeH7Tf1YEODwtbFOs51lTIEME9b8PvYFcmI
 Content-Type: application/json
 
 {
     "username": "lilian_doe",
-    "email": "michaeldoe@example.com",
-    "password": "John@123.",
+    "email": "liliandoe@example.com",
+    "password": "Lily@123.",
     "role": "Government Official"
 
 }
@@ -81,7 +82,8 @@ Content-Type: application/json
 
 #####
 #APPROVE GOVT OFFICIAL
-POST http://localhost:1000/auth/approveofficial/e320ec2d-7616-4fcb-aa2f-9ab306cf2fa7
+PATCH http://localhost:1000/auth/approveofficial/ec24cb69-ed4b-45a6-8312-1ceb31d8158b
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2Y4MWE0OS1kOTJmLTQzNzEtYmVmMi01MzgxYzM1ZTUxNTAiLCJ1c2VybmFtZSI6IkppbW15Iiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE4MDI3NjksImV4cCI6MTcyMjA2MTk2OX0.6Xkp12r_FyznynBQm9AtfcYuM0koCgDVPSYsR_fO6MM
 
 
 

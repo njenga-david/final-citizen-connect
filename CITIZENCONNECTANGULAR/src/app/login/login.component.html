@@ -7,6 +7,8 @@
         <div class="container">
 
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <label >{{ loginsuccessMessage$| async}}</label>
+
                 <h2>Login</h2>
                 <label for="email">Email</label>
                 <input type="email" placeholder="Enter Email Address" id="email" name="email" required

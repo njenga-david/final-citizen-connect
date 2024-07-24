@@ -1,7 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
+import { addUser } from '../Models-Angular/User';
+
+import { AuthenticationService } from '../Services/authentication.service';
+import { AppState } from '../State';
+import { AuthActions } from '../State/Actions/auth.actions';
+import { Store } from '@ngrx/store';
+import { errorSelectorRG, successSelectorRG } from '../State/Selectors/auth.selector';
 
 @Component({
   selector: 'app-register',
@@ -14,9 +21,16 @@ export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup
 
-  roles= ['Government Official','Citizen']
+  roles = ['Government Official', 'Citizen']
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router, private store: Store<AppState>) {
+
+  }
+
+  registererrorMessage$ = this.store.select(errorSelectorRG)
+  registersuccessMessage$ = this.store.select(successSelectorRG)
+
+
   ngOnInit(): void {
 
     // Reactive form validation
@@ -32,12 +46,17 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit() {
     console.log("Register Form Submitted")
-    console.log(this.registerForm);
+    console.log(this.registerForm.value);
     // send form data to server for authentication
 
-    
+    const newUser: addUser = {
+      username: this.registerForm.value.username,
+      email: this.registerForm.value.email,
+      role: this.registerForm.value.role,
+      password: this.registerForm.value.password
+    }
 
-
+    this.store.dispatch(AuthActions.register({ user: newUser }))
   }
 
 }

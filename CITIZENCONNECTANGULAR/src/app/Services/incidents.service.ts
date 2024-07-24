@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { addIncident as addIncident, IIncident } from '../Models Angular/Incidents';
+import { addIncident as addIncident, IIncident } from '../Models-Angular/Incidents';
 
 @Injectable({
   providedIn: 'root'

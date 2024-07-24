@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { addPoll, AddPollResponse, Poll } from '../Models Angular/Poll';
+import { addPoll, AddPollResponse, Poll } from '../Models-Angular/Poll';
 import { Observable } from 'rxjs/internal/Observable';
-import { addVote, AddVoteResponse } from '../Models Angular/Votes';
-import { addChoice } from '../Models Angular/Choices';
+import { addVote, AddVoteResponse } from '../Models-Angular/Votes';
+import { addChoice } from '../Models-Angular/Choices';
 
 @Injectable({
   providedIn: 'root'
