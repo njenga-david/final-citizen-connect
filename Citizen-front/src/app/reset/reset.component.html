@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <div class="contents">
+
+
+        <div class="container">
+            <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+                <h2>Reset Password</h2>
+                
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter Password" id="password" name="password" required
+                    formControlName="password">
+                <div class="helper-text"
+                    *ngIf="resetForm.get('password')?.touched && !resetForm.get('password')?.valid">
+                    <p *ngIf="resetForm.get('password')?.hasError('required')"><i>Password is required</i></p>
+                    <p *ngIf="resetForm.get('password')?.hasError('minlength')"><i>Password must be at least 8 characters</i></p>
+                    <p *ngIf="resetForm.get('password')?.hasError('pattern')"><i>Password is not strong</i></p>
+                </div>
+
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" placeholder="Confirm Password" id="cpassword" name="cpassword" required
+                    formControlName="cpassword">
+                <div class="helper-text"
+                    *ngIf="resetForm.get('cpassword')?.touched && !resetForm.get('cpassword')?.valid">
+                    <p *ngIf="resetForm.get('cpassword')?.hasError('required')"><i>Confirm Password is required</i></p>
+                    <p *ngIf="resetForm.get('cpassword')?.hasError('minlength')"><i>Password must be at least 8 characters</i></p>
+                    <p *ngIf="resetForm.get('cpassword')?.hasError('pattern')"><i>Password is not strong</i></p>
+                </div>
+
+                <button type="submit" [disabled]="resetForm.invalid">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>

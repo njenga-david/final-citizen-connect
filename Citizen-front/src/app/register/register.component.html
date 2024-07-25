@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <div class="contents">
+      <div class="container">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <label>{{ registersuccessMessage$ | async }}</label>
+          <h2>Register</h2>
+  
+          <label for="username">Username</label>
+          <input type="text" placeholder="Enter Username" id="username" name="username" required formControlName="username">
+          <div class="helper-text" *ngIf="registerForm.get('username')?.touched && !registerForm.get('username')?.valid">
+            <p *ngIf="registerForm.get('username')?.hasError('required')"><i>Username is required</i></p>
+          </div>
+  
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter Email Address" id="email" name="email" required formControlName="email">
+          <div class="helper-text" *ngIf="registerForm.get('email')?.touched && !registerForm.get('email')?.valid">
+            <p *ngIf="registerForm.get('email')?.hasError('email')"><i>Email is invalid</i></p>
+            <p *ngIf="registerForm.get('email')?.hasError('required')"><i>Email is required</i></p>
+          </div>
+  
+          <label for="password">Password</label>
+          <input type="password" placeholder="Enter Password" id="password" name="password" required formControlName="password">
+          <div class="helper-text" *ngIf="registerForm.get('password')?.touched && !registerForm.get('password')?.valid">
+            <p *ngIf="registerForm.get('password')?.hasError('required')"><i>Password is required</i></p>
+            <p *ngIf="registerForm.get('password')?.hasError('minlength')"><i>Password must be at least 8 characters</i></p>
+            <p *ngIf="registerForm.get('password')?.hasError('pattern')"><i>Password is not strong</i></p>
+          </div>
+  
+          <label for="role">Account Type</label>
+          <select id="role" name="role" required formControlName="role">
+            <option value="" disabled selected>Select your role</option>
+            <option value="Citizen">Citizen</option>
+            <option value="Government Official">Government Official</option>
+          </select>
+          <div class="helper-text" *ngIf="registerForm.get('role')?.touched && !registerForm.get('role')?.valid">
+            <p *ngIf="registerForm.get('role')?.hasError('required')"><i>Role is required</i></p>
+          </div>
+  
+          <div class="terms">
+            <p><input type="checkbox" formControlName="terms">Before you register agree to <a [routerLink]="['/terms']">Terms and Conditions</a>.</p>
+          </div>
+  
+          <button type="submit" [disabled]="registerForm.invalid">Register</button>
+          <div class="account-info">
+            <span>Already have an account? </span>
+            <a [routerLink]="['/login']">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,59 @@
+/* Base styles for the footer wrapper */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px; /* Reduced padding */
+}
+
+.contents {
+    text-align: center;
+    max-width: 800px; /* Reduced max-width */
+    width: 100%;
+}
+
+/* Styling for the titles section */
+.titles {
+    display: flex;
+    justify-content: center; /* Centered titles */
+    margin-bottom: 15px; /* Reduced margin-bottom */
+}
+
+.titles h3 {
+    margin: 0 10px; /* Added margin on the sides */
+    font-size: 1rem; /* Reduced font size */
+    color: #333;
+    font-weight: normal;
+}
+
+/* Styling for the footer section */
+.footer {
+    margin-bottom: 15px; /* Reduced margin-bottom */
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Reduced space between social icons */
+}
+
+.socials i {
+    font-size: 1.25rem; /* Reduced font size */
+    color: #333;
+    transition: color 0.3s;
+}
+
+.socials i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Styling for the copyright section */
+.copyright {
+    font-size: 0.75rem; /* Reduced font size */
+    color: #666;
+}
+
+.copyright p {
+    margin: 0;
+}

@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <div class="contents">
+      <div class="vote-card">
+        <h2>Question of the Day</h2>
+        <p>How have the recent demonstrations affected you?</p>
+  
+        <form [formGroup]="voteForm" (ngSubmit)="onVote()">
+          <label>
+            <input type="radio" name="options" formControlName="option" value="Option1"> Option1
+          </label>
+          <label>
+            <input type="radio" name="options" formControlName="option" value="Option2"> Option2
+          </label>
+          <label>
+            <input type="radio" name="options" formControlName="option" value="Option3"> Option3
+          </label>
+          <div class="vote-action">
+            <button type="submit" [disabled]="voteForm.invalid">Vote</button>
+          </div>
+        </form>
+      </div>
+  
+      <div class="result-card">
+        <h3>Results</h3>
+        <div *ngFor="let result of voteResults">
+          <p>{{ result.option }}: {{ result.votes }} votes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

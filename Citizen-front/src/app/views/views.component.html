@@ -1,0 +1,27 @@
+<div class="incident-wrapper">
+    <div class="incident-header">
+        <h2>Reported Incidents</h2>
+        <button class="btn-new-incident" [routerLink]="['/report-incident']">Report New Incident</button>
+    </div>
+    
+    <div class="incident-list">
+        <div *ngFor="let incident of (incidents$ | async)" class="incident-item">
+            <h3>{{ incident.title }}</h3>
+            <p>{{ incident.description | shortenDescription:150 }}</p>
+            <p class="incident-status">Status: {{ incident.status }}</p>
+            <p class="incident-date">Reported on: {{ incident.reportedDate | date }}</p>
+            <p class="incident-reporter">Reported by: {{ getReporterName(incident.userId) }}</p>
+            <div class="incident-actions">
+                <button (click)="viewIncidentDetails(incident.id)">View Details</button>
+                <button *ngIf="isAdmin" (click)="resolveIncident(incident.id)">Resolve</button>
+                <button *ngIf="isAdmin" (click)="deleteIncident(incident.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pagination-controls">
+        <button (click)="prevPage()" [disabled]="currentPage === 0">Previous</button>
+        <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
+    </div>
+</div>

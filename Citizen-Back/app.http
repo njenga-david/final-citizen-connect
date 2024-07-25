@@ -1,0 +1,388 @@
+
+#####
+#------------------------------------------------------------------------------
+# USER REQUESTS START HERE
+
+
+#CREATE A USER
+POST http://localhost:4000/auth/register 
+Content-Type: application/json
+
+{
+    "username": "Joe",
+    "email": "njenga@gmail.com",
+    "password": "Joes@123456.",
+    "role": "Government Official"
+
+}
+
+#####
+#GET ALL USERS
+
+GET  http://localhost:4000/auth/ 
+
+#####
+#GET USER BY ID
+
+GET  http://localhost:1000/auth/c7242e25-f4a3-419b-b52f-97935ca018dc
+
+#####
+#UPDATE USER
+
+PATCH   http://localhost:1000/auth/725cf6f0-e0c4-4502-9a19-1b8024be11f7
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2Y4MWE0OS1kOTJmLTQzNzEtYmVmMi01MzgxYzM1ZTUxNTAiLCJ1c2VybmFtZSI6IkppbW15Iiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE3ODc0NTQsImV4cCI6MTcyMjA0NjY1NH0.ABX3HkmHOeH7Tf1YEODwtbFOs51lTIEME9b8PvYFcmI
+Content-Type: application/json
+
+{
+    "username": "lilian_doe",
+    "email": "liliandoe@example.com",
+    "password": "Lily@123.",
+    "role": "Government Official"
+
+}
+
+#####
+#DELETE USER
+
+DELETE http://localhost:1000/auth/c7242e25-f4a3-419b-b52f-97935ca018dc
+
+#####
+#UPDATE PASSWORD
+PATCH   http://localhost:1000/auth/updatepassword/c3f81a49-d92f-4371-bef2-5381c35e5150
+Content-Type: application/json
+
+{
+    "password": "Jimmy@123."
+}
+
+
+#####
+#LOGIN USER
+
+POST http://localhost:1000/auth/login
+Content-Type: application/json
+
+{
+    "email": "kubaijames728@gmail.com",
+    "password": "Jimmy@123."
+}
+
+
+#####
+
+#FORGOT PASSWORD
+POST http://localhost:1000/auth/forgotpassword 
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2Y4MWE0OS1kOTJmLTQzNzEtYmVmMi01MzgxYzM1ZTUxNTAiLCJ1c2VybmFtZSI6IkppbW15Iiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE2NDA5MTEsImV4cCI6MTcyMTkwMDExMX0.cKZ0WCy9UCKvpgvVaHN2vB7UnLSPpfXkXClojKlIJ3Q
+Content-Type: application/json
+
+{
+    "email": "kubaijames728@gmail.com"
+}
+
+
+#####
+#APPROVE GOVT OFFICIAL
+PATCH http://localhost:1000/auth/approveofficial/ec24cb69-ed4b-45a6-8312-1ceb31d8158b
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2Y4MWE0OS1kOTJmLTQzNzEtYmVmMi01MzgxYzM1ZTUxNTAiLCJ1c2VybmFtZSI6IkppbW15Iiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE4MDI3NjksImV4cCI6MTcyMjA2MTk2OX0.6Xkp12r_FyznynBQm9AtfcYuM0koCgDVPSYsR_fO6MM
+
+
+
+
+
+
+
+#####
+#------------------------------------------------------------------------------
+# POLLS REQUESTS START HERE
+
+#CREATE A POLL
+
+########
+POST http://localhost:1000/polls/addpoll
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MjVjZjZmMC1lMGM0LTQ1MDItOWExOS0xYjgwMjRiZTExZjciLCJ1c2VybmFtZSI6ImxpbGlhbl9kb2UiLCJyb2xlIjoiR292ZXJubWVudCBPZmZpY2lhbCIsImlhdCI6MTcyMTMxOTc1MSwiZXhwIjoxNzIxNTc4OTUxfQ.7hkfiOmRxkvNUCkBwEe_HpjYz4V_9PEkR4EPrT00anA
+Content-Type: application/json
+
+{
+    "question": "What Colors do you like",
+    "startdate":"7/18/2024",
+    "enddate":"7/25/2024",
+    "choices": ["Green", "Blue","Yellow"]
+}1
+
+#####
+POST  http://localhost:1000/polls/addvote
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjEzMTExNTksImV4cCI6MTcyMTMyMTk1OX0.0cyLLbT0BaIV_RDpCLHubExJNlnoA4YpL0IZhEcJYcA
+Content-Type: application/json
+
+{
+    "pollid": "9a644348-1733-400c-b457-d2f697fcad7c",
+    "choiceid": "4d583d1a-df29-4914-ac6b-e12557c849af"
+}
+
+
+#####
+#GET ALL POLLS
+GET   http://localhost:1000/polls
+
+
+#####
+#GET ONE POLL
+
+
+GET   http://localhost:1000/polls/9a644348-1733-400c-b457-d2f697fcad7c
+
+
+
+#####
+
+#------------------------------------------------------------------------------
+# VIEWS REQUESTS START HERE
+
+POST http://localhost:1000/views/addview
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjEzOTQ2NjgsImV4cCI6MTcyMTY1Mzg2OH0.9_M2UEuWoQQxXRqsMup0rIQEmrBVoYXA-tiS4C8MxFQ
+Content-Type: application/json
+
+{
+    "title": "What do you think about the state of our public hospitals?",
+    "description": "This is a space where stakeholders in the health sector can discuss pertinent issues affecting their daily operations"
+}
+
+#####
+#GET ALL VIEWS
+GET  http://localhost:1000/views/
+
+
+
+
+#####
+#GET A SINGLE VIEW
+GET http://localhost:1000/views/608b7fce-0db4-4058-b3f6-a70ba56b21cd
+
+
+#####
+#UPDATE A VIEW
+PATCH  http://localhost:1000/views/608b7fce-0db4-4058-b3f6-a70ba56b21cd
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "title": "I changed the title of this topic AGAIN PART TWO AND THREE",
+    "description": "This is a space where stakeholders in the health sector can discuss pertinent issues affecting their daily operations"
+}
+
+#####
+#DELETE A VIEW
+DELETE http://localhost:1000/views/608b7fce-0db4-4058-b3f6-a70ba56b21cd
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+
+
+#####
+#------------------------------------------------------------------------------
+#INCIDENT REQUESTS START HERE
+#ADD INCIDENTS
+POST  http://localhost:1000/incidents
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2Y4MWE0OS1kOTJmLTQzNzEtYmVmMi01MzgxYzM1ZTUxNTAiLCJ1c2VybmFtZSI6IkppbW15Iiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE2NDUyMDEsImV4cCI6MTcyMTkwNDQwMX0.Pw54f5Qx8QGi13_Qohmv23ZEJtvd9ZC8RoGJdnhaaOA
+Content-Type: application/json
+
+{
+    "title": "Incident 2",
+    "description": "This is the Second incident",
+    "location": "Nyeri",
+    "multimedia": "https://images.unsplash.com/photo-1522158637959-30385a09e0da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGV2ZW50fGVufDB8MHwwfHx8MA%3D%3D"
+}
+
+
+#####
+#GET ALL INCIDENTS
+GET   http://localhost:1000/incidents
+
+
+#####
+#GET A SPECIFIC INCIDENT
+GET   http://localhost:1000/incidents/6561effb-59f0-40dc-9fd6-74c44fe77966
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+#####
+#UPDATE INCDIENT
+
+PATCH   http://localhost:1000/incidents/6561effb-59f0-40dc-9fd6-74c44fe77966
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "title": "Updated Incidents",
+    "description": "This is the updated incident",
+    "location": "Nakuru",
+    "multimedia": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGV2ZW50fGVufDB8MHwwfHx8MA%3D%3D"
+}
+
+
+#####
+#DELETE INCIDENT
+DELETE    http://localhost:1000/incidents/6561effb-59f0-40dc-9fd6-74c44fe77966
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+
+#####
+#------------------------------------------------------------------------------
+#COMENT REQUESTS START HERE
+#ADD COMMENT
+POST  http://localhost:1000/comments
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "comment": "This is my third comment",
+    "viewid": "63abe622-3b60-46ed-8700-4ff01fc9e1dd"
+}
+
+
+#####
+#GET ALLL COMMENTS
+GET   http://localhost:4000/comments
+
+
+#####
+#GET SPECIFIC COMENT
+GET   http://localhost:1000/comments/6fe5326d-8532-40d4-b4e3-6db195a81ed0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+#####
+#UPDATE COMMENT
+
+PATCH   http://localhost:1000/comments/44a11801-9e30-43e2-9775-cbe9144adf1f
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "comment": "This is my third comment Different",
+    "viewid": "63abe622-3b60-46ed-8700-4ff01fc9e1dd"
+}
+
+
+
+#####
+#DELETE COMMENT
+DELETE    http://localhost:1000/comments/6fe5326d-8532-40d4-b4e3-6db195a81ed0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+
+
+
+#####
+#------------------------------------------------------------------------------
+#AI CHAT REQUESTS START HERE
+#ADD CHAT
+POST  http://localhost:1000/chats/addchat
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "userid": "0a79490a-01ed-4fe0-bf37-0ecb4ad89a6a"
+
+}
+
+#####
+#GET ALL CHATS
+GET   http://localhost:1000/chats/
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+#####
+#GET SPECIFIC CHAT
+GET   http://localhost:1000/chats/2d453698-e37c-463d-9860-12641981f3df
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+#####
+#UPDATE CHAT
+# Note you cant update user id coz its a foreign key.
+PATCH   http://localhost:1000/chats/2d453698-e37c-463d-9860-12641981f3df
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "userid": "0a79490a-01ed-4fe0-bf37-0ecb4ad89a6a234"
+
+}
+
+
+#####
+#DELETE A CHAT
+DELETE http://localhost:1000/chats/2d453698-e37c-463d-9860-12641981f3df
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+
+#####
+#------------------------------------------------------------------------------
+#AI CHAT MESSAGES REQUESTS START HERE
+#ADD A MESSAGE (USER)
+POST  http://localhost:1000/messages/addmessage
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "chatid": "57311d10-e6eb-4be5-84e9-805648e8fcb0",
+    "userid": "0a79490a-01ed-4fe0-bf37-0ecb4ad89a6a",
+    "sender": "user",
+    "messagetext": "Summarize the tax code for me"
+
+}
+
+#####
+#ADD A MESSAGE (AI)
+POST  http://localhost:1000/messages/addmessage
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "chatid": "57311d10-e6eb-4be5-84e9-805648e8fcb0",
+    "userid": "0a79490a-01ed-4fe0-bf37-0ecb4ad89a6a",
+    "sender": "ai",
+    "messagetext": "This is the summary..."
+
+}
+#####
+#GET ALL MESSAGES
+GET  http://localhost:1000/messages/
+
+
+#####
+# UPDATE MESSAGE
+PATCH   http://localhost:1000/messages/330d41d2-cc75-4dd4-8454-e2fab05f1c2e
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+Content-Type: application/json
+
+{
+    "chatid": "57311d10-e6eb-4be5-84e9-805648e8fcb0",
+    "userid": "0a79490a-01ed-4fe0-bf37-0ecb4ad89a6a",
+    "sender": "user",
+    "messagetext": "1) Explain to me the tax code"
+
+}
+
+
+#####
+#DELETE MESSAGES
+DELETE    http://localhost:1000/messages/330d41d2-cc75-4dd4-8454-e2fab05f1c2e
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYTc5NDkwYS0wMWVkLTRmZTAtYmYzNy0wZWNiNGFkODlhNmEiLCJ1c2VybmFtZSI6IkpvaG5fZG9lIiwicm9sZSI6IkNpdGl6ZW4iLCJpYXQiOjE3MjE0NDQ2NDksImV4cCI6MTcyMTcwMzg0OX0.PDyRnthoafMBbCTot_DrMLyI0UklDyGXCfRyFfg5a4M
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<div class="main-container">
+    <div class="content">
+      <div class="view-section">
+        <h2>Impact of Demonstrations</h2>
+  
+        <div class="author-info">
+          <span class="author">Alex Kamau</span>
+          <span class="date-time">13/7/2024, 9:34 AM</span>
+        </div>
+  
+        <p class="view-description">
+          How have the recent demonstrations impacted your daily life? Share your experiences and thoughts on the situation. Have you noticed any significant changes in your community or work environment?
+        </p>
+  
+        <div class="summary-info">
+          <p>View Summary: 150 Participants</p>
+        </div>
+      </div>
+  
+      <div class="comments-section">
+        <h3>Comments</h3>
+  
+        <div class="comment" *ngFor="let comment of comments">
+          <h4>{{ comment.author }}</h4>
+          <p>{{ comment.content }}</p>
+          <div class="comment-meta">
+            <span>{{ comment.date }}</span> - <span>{{ comment.time }}</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="comment-form">
+        <form [formGroup]="addCommentForm" (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <input type="text" placeholder="Type your comment here" formControlName="comment">
+            <button type="submit" [disabled]="addCommentForm.invalid">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

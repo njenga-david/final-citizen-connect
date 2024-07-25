@@ -1,0 +1,85 @@
+/* General Form Styles */
+.poll-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-add-response {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .btn-add-response:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .poll-form {
+      padding: 15px;
+    }
+  
+    .form-group {
+      margin-bottom: 10px;
+    }
+  }
+  

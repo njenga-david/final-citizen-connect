@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <div class="contents">
+        <div class="container">
+            <form action="" [formGroup]="addIncidentForm" (ngSubmit)="onSubmit()">
+                <h2>Add Incident</h2>
+                <label for="title">Incident Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter Incident Title" formControlName="title">
+                <div class="helper-text" *ngIf="addIncidentForm.get('title')?.touched && !addIncidentForm.get('title')?.valid">
+                    <p *ngIf="addIncidentForm.get('title')?.hasError('required')"><i>Title is required</i></p>
+                </div>
+
+                <label for="description">Incident Description</label>
+                <input type="text" id="description" name="description" placeholder="Enter Incident Description" formControlName="description">
+                <div class="helper-text" *ngIf="addIncidentForm.get('description')?.touched && !addIncidentForm.get('description')?.valid">
+                    <p *ngIf="addIncidentForm.get('description')?.hasError('required')"><i>Description is required</i></p>
+                </div>
+
+                <label for="location">Incident Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter Incident Location" formControlName="location">
+                <div class="helper-text" *ngIf="addIncidentForm.get('location')?.touched && !addIncidentForm.get('location')?.valid">
+                    <p *ngIf="addIncidentForm.get('location')?.hasError('required')"><i>Location is required</i></p>
+                </div>
+
+                <label for="multimediapath">Upload Multimedia</label>
+                <input type="file" id="multimediapath" name="multimediapath" formControlName="multimediapath">
+                <div class="helper-text" *ngIf="addIncidentForm.get('multimediapath')?.touched && !addIncidentForm.get('multimediapath')?.valid">
+                    <p *ngIf="addIncidentForm.get('multimediapath')?.hasError('required')"><i>Multimedia is required</i></p>
+                </div>
+
+                <button type="submit" [disabled]="addIncidentForm.invalid">Add Incident</button>
+            </form>
+        </div>
+    </div>
+</div>

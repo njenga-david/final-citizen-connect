@@ -1,0 +1,98 @@
+/* Style for the wrapper and background image */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../../assets/citizen-back.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Ensure contents are centrally aligned */
+.contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Style for the container with form */
+.container {
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the form elements */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.helper-text {
+    color: red;
+    font-size: 0.875rem;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+}
+
+/* Style for account info section */
+.account-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.account-info span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.account-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.account-info a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../../../Citizen/flask-EndPoints"
+		}
+	],
+	"settings": {}
+}

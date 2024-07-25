@@ -1,0 +1,136 @@
+/* General Layout Styles */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.side-bar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar .header h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.side-bar .nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.side-bar .nav a:hover {
+  background-color: #34495e;
+}
+
+.display-port {
+  flex: 1;
+  padding: 20px;
+}
+
+.view-header {
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.view-header h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.view-header a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.view-header a:hover {
+  text-decoration: underline;
+}
+
+/* Table Styles */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1em;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table thead {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f4f4f4;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #2c3e50;
+}
+
+.styled-table .actions input {
+  margin-right: 5px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.styled-table .actions #edit-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.styled-table .actions #edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.styled-table .actions #approve-btn {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.styled-table .actions #approve-btn:hover {
+  background-color: #27ae60;
+}
+
+.styled-table .actions #delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.styled-table .actions #delete-btn:hover {
+  background-color: #c0392b;
+}

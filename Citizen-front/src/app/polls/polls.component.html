@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div class="contents">
+        <div class="add-poll">
+            <button (click)="navigateTo('/addpoll')">Create a New Poll</button>
+        </div>
+        <div class="polls-container">
+            <div *ngFor="let poll of polls" class="poll-card">
+                <h3>{{ poll.title }}</h3>
+                <p>Total Votes: {{ poll.totalVotes }}</p>
+                <p>{{ poll.daysLeft }} days left</p>
+                <button (click)="navigateTo('/poll', poll.id)">View Poll</button>
+            </div>
+        </div>
+    </div>
+</div>

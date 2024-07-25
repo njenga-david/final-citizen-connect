@@ -1,0 +1,85 @@
+/* General Container */
+.views-container {
+    padding: 20px;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  
+  /* Ensure the background color has transparency if needed */
+  .views-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust opacity as needed */
+  }
+  
+  /* Styling for text to ensure readability */
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .views-list {
+    margin-bottom: 20px;
+  }
+  
+  .view-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+  .view-item:last-child {
+    border-bottom: none;
+  }
+  
+  .view-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #007bff;
+  }
+  
+  .view-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .view-author {
+    font-style: italic;
+    color: #888;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pagination-controls button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .pagination-controls span {
+    font-size: 1rem;
+    color: #333;
+  }
+  
